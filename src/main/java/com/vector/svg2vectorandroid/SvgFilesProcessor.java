@@ -107,6 +107,9 @@ public class SvgFilesProcessor {
 	
 	private File getFileWithXMlExtention(Path target, String extention, String extentionSuffix){
 		String svgFilePath =  target.toFile().getAbsolutePath();
+		String fileName = svgFilePath.substring(svgFilePath.lastIndexOf(File.separator), svgFilePath.length());
+		String newFileName = fileName.replace('-', '_');
+		svgFilePath = svgFilePath.replace(fileName, newFileName);
 		StringBuilder svgBaseFile = new StringBuilder();
 		int index = svgFilePath.lastIndexOf(".");
 		if(index != -1){
@@ -116,7 +119,7 @@ public class SvgFilesProcessor {
 		svgBaseFile.append(null != extentionSuffix ? extentionSuffix : "");
 		svgBaseFile.append(".");
 		svgBaseFile.append(extention);
-		return new File(svgBaseFile.toString());	
+		return new File(svgBaseFile.toString());
 	}
 
 }
