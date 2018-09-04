@@ -37,7 +37,7 @@ public class SvgFilesProcessor {
 		this.sourceSvgPath = Paths.get(sourceSvgDirectory);
 		this.destinationVectorPath = Paths.get(destinationVectorDirectory);
 		this.extention = extention;
-		this.extentionSuffix = extentionSuffix;
+		this.extentionSuffix = null;
 	}
 	
 	public void process(){
